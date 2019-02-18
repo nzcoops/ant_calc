@@ -1,0 +1,12 @@
+name: ant_calc
+title: ant_calc
+username:
+account: nzcoops
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 723322
+bundleId: 1882355
+url: https://nzcoops.shinyapps.io/ant_calc/
+when: 1550498119.26665
+asMultiple: FALSE
+asStatic: FALSE
