@@ -150,11 +150,24 @@ server <- function(input, output) {
     return(dat)
   }
   
+  calc_cup <- function() {
+    
+    dat_cup <- data.frame(
+      x = c(0, 0, 0),
+      y = c(1.5, -1.5, 1.5),
+      xend = c(calc()$clong[1], calc()$clong[1], 0),
+      yend = c(1.5, -1.5, -1.5)
+    )
+    
+    return(dat_cup)
+  }
+  
   output$ant_graphic <- renderPlot(
-
+    
     calc() %>%
       ggplot(aes(y = y, x = x)) +
       geom_segment(aes(xend = xend, yend = yend)) + 
+      geom_segment(data = calc_cup(), aes(x = x, y = y, xend = xend, yend = yend)) + 
       geom_text(aes(label = section, y = 3, x = xlab)) + 
       geom_text(aes(label = long, y = -3, x = xlab)) +
       theme_void() + 
